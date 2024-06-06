@@ -1,2 +1,2 @@
-                                                                                    ^
-# Head over to [wiki](https://github.com/gachikuku/portswigger/wiki) _______________|
+#                                                                                 ^
+# Head over to [wiki](https://github.com/gachikuku/portswigger/wiki) _____________|
