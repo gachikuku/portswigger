@@ -1,14 +1,10 @@
-### &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;^
-# Head over to [wiki](https://github.com/gachikuku/portswigger/wiki) ____________^
-
-
-
-
-
-
-
-
+# Head over to [wiki](https://github.com/gachikuku/portswigger/wiki)
 ```
+          \ \        / _)  |    _) 
+           \ \  \   /   |  |  /  | 
+            \ \  \ /    |    <   | 
+             \_/\_/    _| _|\_\ _| 
+                                     
     __________________   __________________
 .-/|                  \ /                  |\-.
 ||||                   |                   ||||
@@ -24,7 +20,4 @@
 ||||__________________ | __________________||||
 ||/===================\|/===================\||
 `--------------------~___~-------------------''
-
 ```
-
-
