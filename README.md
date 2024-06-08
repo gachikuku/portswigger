@@ -1,4 +1,4 @@
-<h1 align="center"> Head over to [wiki](https://github.com/gachikuku/portswigger/wiki)</h1>
+<h1 align="center"> Head over to <a href="https://github.com/gachikuku/portswigger/wiki">Wiki</a></h1>
 
 ```
     __________________   __________________
