@@ -1,0 +1,46 @@
+--- _http1.py	2025-01-25 15:00:19.035498168 +0200
++++ _http1mod.py	2025-01-25 14:59:41.153260383 +0200
+@@ -247,10 +247,9 @@
+             yield commands.SendData(self.conn, raw)
+         elif isinstance(event, ResponseData):
+             assert self.response
+-            if "chunked" in self.response.headers.get("transfer-encoding", "").lower():
+-                raw = b"%x\r\n%s\r\n" % (len(event.data), event.data)
+-            else:
+-                raw = event.data
++            #if "chunked" in self.response.headers.get("transfer-encoding", "").lower():
++                #raw = b"%x\r\n%s\r\n" % (len(event.data), event.data)
++            raw = event.data
+             if raw:
+                 yield commands.SendData(self.conn, raw)
+         elif isinstance(event, ResponseEndOfMessage):
+@@ -261,7 +260,7 @@
+                 and "chunked"
+                 in self.response.headers.get("transfer-encoding", "").lower()
+             ):
+-                yield commands.SendData(self.conn, b"0\r\n\r\n")
++                yield commands.SendData(self.conn, b"")
+             yield from self.mark_done(response=True)
+         elif isinstance(event, ResponseProtocolError):
+             if not (self.conn.state & ConnectionState.CAN_WRITE):
+@@ -372,16 +371,15 @@
+             yield commands.SendData(self.conn, raw)
+         elif isinstance(event, RequestData):
+             assert self.request
+-            if "chunked" in self.request.headers.get("transfer-encoding", "").lower():
+-                raw = b"%x\r\n%s\r\n" % (len(event.data), event.data)
+-            else:
+-                raw = event.data
++            #if "chunked" in self.request.headers.get("transfer-encoding", "").lower():
++                #raw = b"%x\r\n%s\r\n" % (len(event.data), event.data)
++            raw = event.data
+             if raw:
+                 yield commands.SendData(self.conn, raw)
+         elif isinstance(event, RequestEndOfMessage):
+             assert self.request
+             if "chunked" in self.request.headers.get("transfer-encoding", "").lower():
+-                yield commands.SendData(self.conn, b"0\r\n\r\n")
++                yield commands.SendData(self.conn, b"")
+             elif http1.expected_http_body_size(self.request, self.response) == -1:
+                 yield commands.CloseTcpConnection(self.conn, half_close=True)
+             yield from self.mark_done(request=True)
